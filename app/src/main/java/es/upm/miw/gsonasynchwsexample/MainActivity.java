@@ -4,6 +4,7 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -14,6 +15,9 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.ExecutionException;
 
 import es.upm.miw.gsonasynchwsexample.pojo.Cities;
@@ -40,15 +44,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Log.i(LOG_TAG, "URL request : " + URL_RECURSO);
+
+        // actualmente este boton no hace nada. Se puede poner para que refresque.
         botonEnviar = (Button) findViewById(R.id.btnSubmit);
         lvCitiesList = (ListView) findViewById(R.id.lvCities);
 
-        Log.i(LOG_TAG, "URL=" + URL_RECURSO);
 
         // Asignar url a la lista
         lvCitiesList.setTag(URL_RECURSO);
-
         tarea = new TareaCargarRecurso();
+
+
         try {
             citiesList = tarea.execute(lvCitiesList).get();
         } catch (InterruptedException e) {
@@ -57,10 +64,24 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+
         CustomCityListAdapter adapter =  new CustomCityListAdapter(this, citiesList);
         lvCitiesList.setAdapter(adapter);
 
+
     }
+
+    public void sendMessage(View view) {
+      // fake refresh
+
+        Date date = new Date();
+        Timestamp ts=new Timestamp(date.getTime());
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        //System.out.println(formatter.format(ts));
+        botonEnviar.setText("Timestamp: "+formatter.format(ts));
+
+    }
+
 
     @Override
     protected void onDestroy() {
@@ -108,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
                 Gson gson = new Gson();
                 citiesList = gson.fromJson(fin, Cities.class);
                 buffer = citiesList.getCount()+" cities returned";
-
+                Log.i(LOG_TAG,  buffer);
 
                 fin.close();
                 Log.i(LOG_TAG, "Data received");
@@ -117,7 +138,6 @@ public class MainActivity extends AppCompatActivity {
             } finally {
                 if (con != null) con.disconnect();
             }
-
 
             return citiesList;
         }
