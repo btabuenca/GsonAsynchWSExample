@@ -28,10 +28,10 @@ public class MainActivity extends AppCompatActivity {
     private static final String LOG_TAG = "MiW";
 
     // Vallecas
-    //static final String URL_RECURSO = "http://api.openweathermap.org/data/2.5/find?lat=40.39354&lon=-3.662&cnt=20&APPID=add7afd148b08ad9e0c06da452f061d5";
+    //static final String URL_RECURSO = "http://api.openweathermap.org/data/2.5/find?lat=40.39354&lon=-3.662&cnt=20&APPID=...";
 
     // Base Area de Torrejón
-    static final String URL_RECURSO = "http://api.openweathermap.org/data/2.5/find?lat=40.475172&lon=-3.461757&cnt=10&APPID=add7afd148b08ad9e0c06da452f061d5";
+    static final String URL_RECURSO = "http://api.openweathermap.org/data/2.5/find?lat=40.475172&lon=-3.461757&cnt=10&APPID=...";
 
     Button botonEnviar;
     ListView lvCitiesList;
