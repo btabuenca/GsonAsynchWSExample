@@ -72,7 +72,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void sendMessage(View view) {
-      // fake refresh
+        // this button should refresh the list.
+        // now it just updates text in button
 
         Date date = new Date();
         Timestamp ts=new Timestamp(date.getTime());
