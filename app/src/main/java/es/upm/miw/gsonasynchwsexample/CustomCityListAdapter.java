@@ -77,8 +77,14 @@ public class CustomCityListAdapter extends BaseAdapter {
 
     public int getCount() {
 
-         if(cities.getCount()<=0)  return 1;
-         return cities.getCount();
+        if (cities.getCount()!=null){
+            Integer oI = cities.getCount();
+            return oI.intValue();
+        }else{
+            return 0;
+        }
+         //if(cities.getCount()<=0)  return 1;
+         //return cities.getCount();
 
     }
 
