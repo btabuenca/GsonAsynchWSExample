@@ -58,9 +58,10 @@ public class CustomCityListAdapter extends BaseAdapter {
         // This method is used to return the closest long to the argument
         double dTempRoundOff = Math.round(dTemp*100)/100;
 
+        Utils u = new Utils();
         // % humidity
         Integer oiHumidPerc = cities.getList().get(position).getMain().getHumidity();
-        vh.textViewId.setText("[T:"+ dTempRoundOff+"][H:"+ oiHumidPerc.intValue()+"%]");
+        vh.textViewId.setText("[T:"+ dTempRoundOff+"][H:"+ oiHumidPerc.intValue()+"%]    "+u.getHumidityMetaphor(oiHumidPerc.intValue()) +"🥶");
 
         return  row;
     }
