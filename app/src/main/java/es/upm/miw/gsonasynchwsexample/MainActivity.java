@@ -20,7 +20,7 @@ import es.upm.miw.gsonasynchwsexample.pojo.Cities;
 public class MainActivity extends AppCompatActivity {
 
 
-    private static final String LOG_TAG = "MiW";
+    private static final String LOG_TAG = "btb";
 
     // Vallecas
     //static final String URL_RECURSO = "https://api.openweathermap.org/data/2.5/find?lat=40.39354&lon=-3.662&cnt=20&APPID=add7afd148b08ad9e0c06da452f061d5";

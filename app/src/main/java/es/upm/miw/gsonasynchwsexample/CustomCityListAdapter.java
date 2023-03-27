@@ -61,6 +61,7 @@ public class CustomCityListAdapter extends BaseAdapter {
         Utils u = new Utils();
         // % humidity
         Integer oiHumidPerc = cities.getList().get(position).getMain().getHumidity();
+        // you can use emojipedia https://emojipedia.org/
         vh.textViewId.setText("[T:"+ dTempRoundOff+"][H:"+ oiHumidPerc.intValue()+"%]    "+u.getHumidityMetaphor(oiHumidPerc.intValue()) +"🥶");
 
         return  row;
