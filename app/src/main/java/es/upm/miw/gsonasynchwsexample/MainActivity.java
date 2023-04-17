@@ -23,13 +23,13 @@ public class MainActivity extends AppCompatActivity {
     private static final String LOG_TAG = "btb";
 
     // Vallecas
-    //static final String URL_RECURSO = "https://api.openweathermap.org/data/2.5/find?lat=40.39354&lon=-3.662&cnt=20&APPID=add7afd148b08ad9e0c06da452f061d5";
+    //static final String URL_RECURSO = "https://api.openweathermap.org/data/2.5/find?lat=40.39354&lon=-3.662&cnt=20&APPID=xxxxxx";
 
     // Cosuenda - Zaragoza 41.36342648251211, -1.2983547468037664
-    static final String URL_RECURSO = "https://api.openweathermap.org/data/2.5/find?lat=41.36&lon=-1.298&cnt=5&APPID=add7afd148b08ad9e0c06da452f061d5";
+    static final String URL_RECURSO = "https://api.openweathermap.org/data/2.5/find?lat=41.36&lon=-1.298&cnt=5&APPID=xxxxxxx";
 
     // Base Area de Torrejón
-    //static final String URL_RECURSO = "http://api.openweathermap.org/data/2.5/find?lat=40.475172&lon=-3.461757&cnt=10&APPID=add7afd148b08ad9e0c06da452f061d5";
+    //static final String URL_RECURSO = "http://api.openweathermap.org/data/2.5/find?lat=40.475172&lon=-3.461757&cnt=10&APPID=xxxxxxx";
 
     ListView lvCitiesList;
 
